@@ -12,9 +12,89 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.mycompany.tests</mainClass>
+                    <arguments>
+                        <argument>${project.basedir}</argument>
+                    </arguments>
+                    <classpathScope>compile</classpathScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
+        <!-- Selenide Dependency -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>7.5.0</version> <!-- Ensure you're using the latest version -->
+        </dependency>
 
+        <!-- ReportPortal Java Client -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.epam.reportportal</groupId>-->
+        <!--            <artifactId>reportportal-client</artifactId>-->
+        <!--            <version>5.2.2</version> &lt;!&ndash; Ensure you're using the correct version &ndash;&gt;-->
+        <!--        </dependency>-->
+
+        <!-- ReportPortal TestNG Extension -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.epam.reportportal</groupId>-->
+        <!--            <artifactId>agent-java-testng</artifactId>-->
+        <!--            <version>5.4.4</version>-->
+        <!--        </dependency>-->
+        <!-- ReportPortal Selenide Extension -->
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-selenide</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-testng</artifactId>
+            <version>5.4.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        <!-- TestNG Dependency -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.0</version> <!-- Make sure to use a compatible version -->
+            <!--            <scope>test</scope>-->
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
             <groupId>com.codeborne</groupId>

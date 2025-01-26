@@ -11,9 +11,9 @@ import com.codeborne.selenide.testng.ScreenShooter;
 public class LoginPageTests {
 
 
-    @Test
+    @Test(enabled = true , description = "Testcase to validate login flow for an site")
     public void verifyUrlAndTitle(){
-        open("http://localhost/website/index.html");
+        open("https://accounts.simplilearn.com/user/login");
         String url = WebDriverRunner.url();
         assertThat(url).as("Failed to assert URL ").isEqualTo("http://localhost/website/index.html");
 
